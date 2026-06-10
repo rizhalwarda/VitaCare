@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VitaCare — Studi Kasus UX</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary:#78C3A0; --primary-dark:#4F8F78;
+  --bg-header:#D7E6E0; --bg-page:#EAF2F5;
+  --card:#FFFFFF; --text-main:#000000; --text-sec:#4B4BAB;
+  --border-col:#D9D9D9; --divider-col:#EEEEEE;
+  --success:#22C55E; --info:#3B82F6; --warning:#F59E0B; --error:#EF4444; --light-green:#E8F5EF;
+  --muted:#5A7A70; --accent:#78C3A0; --accent2:#4F8F78;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg-page);color:var(--text-main);font-family:'Poppins',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid var(--divider-col);background:rgba(234,242,245,0.92);backdrop-filter:blur(16px)}
+.nav-logo{font-size:22px;font-weight:800;color:var(--text-main)}
+.nav-logo span{color:var(--primary)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--primary-dark)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 5% 80px;position:relative;overflow:hidden;background:radial-gradient(ellipse at top right,rgba(120,195,160,.18) 0%,transparent 55%),radial-gradient(ellipse at bottom left,rgba(79,143,120,.10) 0%,transparent 55%),var(--bg-page)}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(120,195,160,.15);border:1px solid rgba(120,195,160,.4);color:var(--primary-dark);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;width:fit-content}
+.hero-tag::before{content:'';width:7px;height:7px;background:var(--primary);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-size:clamp(52px,8vw,108px);font-weight:800;line-height:.95;letter-spacing:-3px;color:var(--text-main);margin-bottom:8px}
+.hero h1 em{font-style:normal;color:var(--primary)}
+.hero-sub{font-size:clamp(20px,3vw,40px);font-weight:300;color:var(--muted);letter-spacing:-.5px;margin-bottom:40px}
+.hero-meta{display:flex;gap:48px;padding-top:36px;border-top:1.5px solid var(--divider-col);flex-wrap:wrap}
+.meta-item label{display:block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.meta-item span{font-size:14px;color:var(--text-main);font-weight:600}
+
+/* PHONES MOCKUP CONFIG */
+.hero-mockups{position:absolute;right:5%;bottom:60px;display:flex;gap:16px;align-items:flex-end}
+.phone{width:140px;background:var(--card);border-radius:28px;border:2px solid var(--divider-col);overflow:hidden;box-shadow:0 20px 50px rgba(79,143,120,.15),0 4px 12px rgba(0,0,0,.06);animation:floatPhone 5s ease-in-out infinite;display:flex;flex-direction:column}
+.phone:nth-child(2){animation-delay:.8s;--base-y:30px;transform:translateY(30px)}
+.phone:nth-child(3){animation-delay:1.6s;--base-y:15px;transform:translateY(15px);width:120px}
+@keyframes floatPhone{0%,100%{transform:translateY(var(--base-y,0))}50%{transform:translateY(calc(var(--base-y,0) - 16px))}}
+.phone-top{background:var(--bg-header);height:12px;display:flex;justify-content:center;align-items:center;flex-shrink:0}
+.phone-notch{width:40px;height:5px;background:rgba(79,143,120,.3);border-radius:10px}
+
+/* KODE UTAMA UNTUK MEMASUKKAN FOTO KE DALAM HP */
+.phone-placeholder {
+    width: 100%;
+    aspect-ratio: 9/19;
+    overflow: hidden;
+    position: relative;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.phone-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mengisi penuh layar HP secara presisi */
+    display: block;
+}
+
+/* SECTIONS */
+section{padding:90px 5%;position:relative}
+.section-number{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--primary-dark);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.section-number::after{content:'';width:32px;height:2px;background:var(--primary);border-radius:2px}
+h2.section-title{font-size:clamp(26px,3.5vw,46px);font-weight:700;color:var(--text-main);letter-spacing:-1.5px;line-height:1.15;margin-bottom:24px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.body-text{color:var(--muted);line-height:1.85;font-size:15px;font-weight:400}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:50px 0;background:var(--divider-col);border-radius:20px;overflow:hidden}
+.stat{background:var(--card);padding:36px 32px;transition:background .3s}
+.stat:hover{background:var(--light-green)}
+.stat-num{font-size:48px;font-weight:800;color:var(--primary);line-height:1;margin-bottom:8px;letter-spacing:-2px}
+.stat-label{font-size:13px;color:var(--muted);line-height:1.5;max-width:160px;font-weight:500}
+
+/* PROBLEM */
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--divider-col);margin-top:36px;border-radius:20px;overflow:hidden}
+.prob-card{background:var(--card);padding:32px;transition:background .3s}
+.prob-card:hover{background:var(--light-green)}
+.prob-card-header{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.prob-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.prob-dot.blue{background:var(--info)}.prob-dot.green{background:var(--success)}.prob-dot.orange{background:var(--warning)}
+.prob-card h4{font-size:14px;font-weight:700;color:var(--text-main)}
+.prob-card ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.prob-card li{font-size:13px;color:var(--muted);padding-left:16px;position:relative;line-height:1.5}
+.prob-card li::before{content:'→';position:absolute;left:0;color:var(--primary);font-size:11px;top:2px}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--divider-col);margin-top:36px;border-radius:20px;overflow:hidden}
+.step{background:var(--card);padding:28px 20px;text-align:center;transition:all .3s;cursor:default}
+.step:hover{background:var(--primary)}
+.step:hover .step-num,.step:hover .step-label{color:#fff}
+.step-num{font-size:38px;font-weight:800;color:var(--divider-col);display:block;margin-bottom:6px;transition:color .3s;letter-spacing:-2px}
+.step-label{font-size:12px;font-weight:700;color:var(--text-main);transition:color .3s}
+
+/* FEATURES */
+.feature-list{display:flex;flex-direction:column;gap:2px;background:var(--divider-col);margin-top:36px;border-radius:20px;overflow:hidden}
+.feat-row{background:var(--card);padding:24px 32px;display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:20px;transition:all .3s;cursor:default}
+.feat-row:hover{background:var(--light-green)}
+.feat-row:hover .feat-icon{background:var(--primary);color:#fff}
+.feat-icon{width:46px;height:46px;border-radius:14px;background:var(--light-green);display:flex;align-items:center;justify-content:center;font-size:20px;transition:all .3s;flex-shrink:0}
+.feat-title{font-size:15px;font-weight:700;color:var(--text-main);margin-bottom:2px}
+.feat-desc{font-size:12.5px;color:var(--muted);font-weight:400}
+.feat-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary-dark);background:var(--light-green);border:1.5px solid rgba(79,143,120,.25);padding:4px 10px;border-radius:100px;white-space:nowrap}
+
+/* SHOWCASE */
+.showcase-area{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;margin-top:50px}
+.showcase-area.reverse{direction:rtl}
+.showcase-area.reverse>*{direction:ltr}
+.showcase-phones{display:flex;gap:14px;justify-content:center;align-items:flex-end}
+.showcase-phones .phone{width:155px;animation:floatPhone 5s ease-in-out infinite}
+.showcase-phones .phone:nth-child(2){width:175px;transform:translateY(-20px);--base-y:-20px;animation-delay:.8s}
+.showcase-info{display:flex;flex-direction:column;gap:20px}
+.showcase-num{font-size:80px;font-weight:800;color:rgba(120,195,160,.15);line-height:1;letter-spacing:-6px}
+.showcase-info h3{font-size:26px;font-weight:700;color:var(--text-main);letter-spacing:-1px;line-height:1.2;margin-top:-20px}
+.showcase-info p{color:var(--muted);font-size:14px;line-height:1.8}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-dark);background:var(--light-green);border:1.5px solid rgba(79,143,120,.3);padding:5px 12px;border-radius:100px}
+
+/* HR */
+.hr{height:1.5px;background:var(--divider-col);margin:0 5%}
+
+/* DESIGN SYSTEM */
+.ds-block{margin-top:40px}
+.ds-sub{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:16px}
+
+.palette-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:16px;margin-bottom:36px}
+.swatch{border-radius:14px;overflow:hidden;border:1.5px solid var(--divider-col);background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s}
+.swatch:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.swatch-color{height:68px;width:100%}
+.swatch-info{padding:10px 12px 12px}
+.swatch-name{font-size:12px;font-weight:700;color:var(--text-main);margin-bottom:2px}
+.swatch-hex{font-size:11px;color:var(--muted);font-family:monospace;margin-bottom:5px}
+.swatch-desc{font-size:10px;color:var(--muted);line-height:1.4}
+
+.status-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:36px}
+.status-chip{border-radius:12px;overflow:hidden;border:1.5px solid var(--divider-col);background:var(--card)}
+.status-chip-color{height:52px;width:100%}
+.status-chip-info{padding:8px 10px 10px}
+.status-chip-name{font-size:11px;font-weight:700;color:var(--text-main);margin-bottom:1px}
+.status-chip-hex{font-size:10px;color:var(--muted);font-family:monospace;margin-bottom:3px}
+.status-chip-desc{font-size:9.5px;color:var(--muted);line-height:1.3}
+
+/* TESTING */
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--divider-col);margin-top:36px;border-radius:20px;overflow:hidden}
+.test-card{background:var(--card);padding:32px;transition:background .3s}
+.test-card:hover{background:var(--light-green)}
+.test-card h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary-dark);margin-bottom:12px}
+.test-card p{color:var(--muted);font-size:13.5px;line-height:1.7}
+.task-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:36px;border-radius:16px;overflow:hidden;border:1.5px solid var(--divider-col)}
+.task-table thead tr{background:var(--bg-header)}
+.task-table th{text-align:left;padding:13px 20px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary-dark)}
+.task-table td{padding:15px 20px;font-size:13.5px;color:var(--text-main);border-top:1px solid var(--divider-col);background:var(--card)}
+.task-table tr:hover td{background:var(--light-green)}
+.status-pass{display:inline-flex;align-items:center;gap:6px;background:var(--light-green);color:var(--primary-dark);font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px}
+.status-pass::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--success)}
+
+/* CTA */
+.cta-section{margin:50px 5%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:24px;padding:72px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cta-section h2{font-size:44px;font-weight:800;color:#fff;letter-spacing:-2px;margin-bottom:14px}
+.cta-section p{color:rgba(255,255,255,.85);max-width:480px;margin:0 auto 28px;font-size:15px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--primary-dark);padding:14px 28px;border-radius:100px;font-weight:700;font-size:14px;letter-spacing:.02em;transition:all .3s;border:none;cursor:pointer;font-family:'Poppins',sans-serif}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.15)}
+
+footer{padding:36px 5%;border-top:1.5px solid var(--divider-col);display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);font-weight:500}
+
+.fade{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.fade.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  .hero-mockups{display:none}
+  .two-col,.test-grid{grid-template-columns:1fr;gap:24px}
+  .stats-row{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:repeat(3,1fr)}
+  .status-row{grid-template-columns:repeat(3,1fr)}
+  .showcase-area,.showcase-area.reverse{grid-template-columns:1fr;direction:ltr}
+  nav .nav-links{display:none}
+  .cta-section{padding:48px 24px}
+  .cta-section h2{font-size:30px}
+  footer{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Vita<span>Care</span></div>
+  <ul class="nav-links">
+    <li><a href="#overview">Ringkasan</a></li>
+    <li><a href="#problem">Masalah</a></li>
+    <li><a href="#features">Fitur</a></li>
+    <li><a href="#showcase">Tampilan</a></li>
+    <li><a href="#design-system">Desain</a></li>
+    <li><a href="#testing">Validasi</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">Studi Kasus UX · 2026</div>
+  <h1>Vita<em>Care</em></h1>
+  <p class="hero-sub">Layanan Kesehatan Digital</p>
+  <div class="hero-meta">
+    <div class="meta-item"><label>Peran</label><span>UX / UI Designer</span></div>
+    <div class="meta-item"><label>Durasi</label><span>2 Minggu</span></div>
+    <div class="meta-item"><label>Platform</label><span>Android · iOS</span></div>
+    <div class="meta-item"><label>Alat</label><span>Figma · FigJam</span></div>
+  </div>
+  <div class="hero-mockups">
+    <div class="phone">
+      <div class="phone-top"><div class="phone-notch"></div></div>
+      <div class="phone-placeholder">
+        <img src="img/masuk.png" alt="Splash Screen">
+      </div>
+    </div>
+    <div class="phone">
+      <div class="phone-top"><div class="phone-notch"></div></div>
+      <div class="phone-placeholder">
+        <img src="img/Beranda.png" alt="Beranda">
+      </div>
+    </div>
+    <div class="phone">
+      <div class="phone-top"><div class="phone-notch"></div></div>
+      <div class="phone-placeholder">
+        <img src="img/Profile.png" alt="Notifikasi">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<section id="overview" class="fade">
+  <div class="two-col">
+    <div>
+      <div class="section-number">01 — Ringkasan</div>
+      <h2 class="section-title">Latar Belakang Proyek</h2>
+    </div>
+    <div>
+      <p class="body-text">VitaCare adalah aplikasi kesehatan digital yang dirancang untuk mempermudah masyarakat mendapatkan akses layanan kesehatan yang cepat, aman, dan intuitif. Proyek ini mengeksplorasi bagaimana antarmuka mobile dapat menjembatani kebutuhan pengguna awam dengan sistem layanan kesehatan yang kompleks — menciptakan pengalaman yang sederhana, terpercaya, dan berorientasi pada pasien.</p>
+      <br>
+      <p class="body-text">Studi kasus ini mendokumentasikan proses desain secara menyeluruh: dari riset kebutuhan pengguna, pemetaan masalah, hingga perancangan antarmuka high-fidelity yang tervalidasi dengan pengujian usabilitas nyata.</p>
+    </div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">270M+</div><div class="stat-label">penduduk Indonesia yang membutuhkan akses kesehatan digital</div></div>
+    <div class="stat"><div class="stat-num">67%</div><div class="stat-label">pengguna kesulitan menggunakan aplikasi kesehatan yang ada</div></div>
+    <div class="stat"><div class="stat-num">4×</div><div class="stat-label">efisiensi lebih tinggi dengan antrian digital dibanding manual</div></div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<section id="problem" class="fade">
+  <div class="section-number">02 — Rumusan Masalah</div>
+  <h2 class="section-title">Apa yang ingin kami selesaikan</h2>
+  <div class="problem-grid">
+    <div class="prob-card">
+      <div class="prob-card-header"><div class="prob-dot blue"></div><h4>Masalah Pengguna</h4></div>
+      <ul>
+        <li>Proses pendaftaran antrian di klinik masih manual dan membuang waktu</li>
+        <li>Riwayat kesehatan pasien tidak tersimpan secara digital</li>
+        <li>Tidak ada notifikasi pengingat jadwal konsultasi</li>
+        <li>Akses informasi dokter dan jadwal praktik sulit ditemukan</li>
+        <li>Layanan darurat tidak memiliki jalur akses cepat dari aplikasi</li>
+      </ul>
+    </div>
+    <div class="prob-card">
+      <div class="prob-card-header"><div class="prob-dot orange"></div><h4>Masalah Sistem</h4></div>
+      <ul>
+        <li>Klinik tidak memiliki sistem digitalisasi antrian terintegrasi</li>
+        <li>Data rekam medis tersebar dan tidak terpusat</li>
+        <li>Komunikasi pasien dan tenaga medis terbatas pasca-konsultasi</li>
+        <li>Tidak ada panduan interaktif bagi pasien baru</li>
+      </ul>
+    </div>
+    <div class="prob-card">
+      <div class="prob-card-header"><div class="prob-dot green"></div><h4>Peluang Desain</h4></div>
+      <ul>
+        <li>Sistem antrian digital real-time yang transparan</li>
+        <li>Rekam medis digital yang aman dan mudah diakses</li>
+        <li>Notifikasi cerdas untuk jadwal dan pengingat obat</li>
+        <li>Panduan onboarding interaktif untuk pengguna baru</li>
+        <li>Akses gawat darurat satu ketukan dari layar utama</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<section class="fade">
+  <div class="section-number">03 — Proses Desain</div>
+  <h2 class="section-title">Design Thinking</h2>
+  <p class="body-text" style="max-width:600px">Pendekatan Design Thinking digunakan untuk memahami kebutuhan pengguna secara mendalam — dimulai dari empati, merumuskan masalah inti, hingga solusi yang relevan dan tervalidasi.</p>
+  <div class="process-steps">
+    <div class="step"><span class="step-num">01</span><div class="step-label">Empati</div></div>
+    <div class="step"><span class="step-num">02</span><div class="step-label">Definisi</div></div>
+    <div class="step"><span class="step-num">03</span><div class="step-label">Ideasi</div></div>
+    <div class="step"><span class="step-num">04</span><div class="step-label">Prototipe</div></div>
+    <div class="step"><span class="step-num">05</span><div class="step-label">Pengujian</div></div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<section id="features" class="fade">
+  <div class="section-number">04 — Fitur Utama</div>
+  <h2 class="section-title">Solusi yang dirancang</h2>
+  <div class="feature-list">
+    <div class="feat-row"><div class="feat-icon">📅</div><div><div class="feat-title">Buat Janji Konsultasi</div><div class="feat-desc">Daftar konsultasi online dengan dokter pilihan, pilih jadwal, dan dapatkan konfirmasi instan.</div></div><div class="feat-tag">Core</div></div>
+    <div class="feat-row"><div class="feat-icon">📋</div><div><div class="feat-title">Cek Antrian Real-Time</div><div class="feat-desc">Pantau posisi antrian secara langsung tanpa perlu hadir fisik sebelum giliran tiba.</div></div><div class="feat-tag">Core</div></div>
+    <div class="feat-row"><div class="feat-icon">📄</div><div><div class="feat-title">Rekam Medis Digital</div><div class="feat-desc">Riwayat kesehatan, diagnosis, dan resep tersimpan aman dan dapat diakses kapan saja.</div></div><div class="feat-tag">Data</div></div>
+    <div class="feat-row"><div class="feat-icon">🔔</div><div><div class="feat-title">Notifikasi Cerdas</div><div class="feat-desc">Pengingat otomatis untuk jadwal kontrol, antrian, dan konsumsi obat harian.</div></div><div class="feat-tag">Utility</div></div>
+    <div class="feat-row"><div class="feat-icon">🚑</div><div><div class="feat-title">Akses Gawat Darurat</div><div class="feat-desc">Tombol prioritas untuk menghubungi layanan darurat dan menginformasikan lokasi secara cepat.</div></div><div class="feat-tag">Safety</div></div>
+    <div class="feat-row"><div class="feat-icon">📖</div><div><div class="feat-title">Panduan Pengguna</div><div class="feat-desc">Onboarding interaktif dan panduan penggunaan fitur untuk semua kalangan pengguna.</div></div><div class="feat-tag">UX</div></div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<section id="showcase" class="fade">
+  <div class="section-number">05 — Tampilan UI Akhir</div>
+  <h2 class="section-title">Antarmuka yang hidup</h2>
+</section>
+
+<section class="fade" style="padding-top:0">
+  <div class="showcase-area">
+    <div class="showcase-phones">
+      <div class="phone">
+        <div class="phone-top"><div class="phone-notch"></div></div>
+        <div class="phone-placeholder">
+          <img src="img/masuk.png" alt="Layar Masuk">
+        </div>
+      </div>
+      <div class="phone">
+        <div class="phone-top"><div class="phone-notch"></div></div>
+        <div class="phone-placeholder">
+          <img src="img/Beranda.png" alt="Beranda">
+        </div>
+      </div>
+    </div>
+    <div class="showcase-info">
+      <div class="showcase-num">01</div>
+      <h3>Splash Screen & Beranda</h3>
+      <p>Layar pembuka yang mencerminkan identitas VitaCare — bersih, tepercaya, dan langsung menyampaikan tujuan aplikasi. Beranda menampilkan akses cepat ke semua fitur utama dalam hierarki visual yang jelas.</p>
+      <div class="tag-row"><span class="tag">Branding</span><span class="tag">Navigation</span><span class="tag">First Impression</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="fade" style="padding-top:50px">
+  <div class="showcase-area reverse">
+    <div class="showcase-phones">
+      <div class="phone">
+        <div class="phone-top"><div class="phone-notch"></div></div>
+        <div class="phone-placeholder">
+          <img src="img/Cek antrian.png" alt="Cek Antrian">
+        </div>
+      </div>
+      <div class="phone">
+        <div class="phone-top"><div class="phone-notch"></div></div>
+        <div class="phone-placeholder">
+          <img src="img/buat janji.png" alt="Buat Janji">
+        </div>
+      </div>
+    </div>
+    <div class="showcase-info">
+      <div class="showcase-num">02</div>
+      <h3>Antrian & Penjadwalan</h3>
+      <p>Alur pembuatan janji yang intuitif dengan pemilihan dokter, spesialisasi, dan slot waktu. Sistem antrian real-time menampilkan estimasi waktu tunggu agar pasien dapat merencanakan kedatangan.</p>
+      <div class="tag-row"><span class="tag">Scheduling</span><span class="tag">Real-time</span><span class="tag">Efficiency</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="fade" style="padding-top:50px">
+  <div class="showcase-area">
+    <div class="showcase-phones">
+      <div class="phone">
+        <div class="phone-top"><div class="phone-notch"></div></div>
+        <div class="phone-placeholder">
+          <img src="img/notifikasi.png" alt="Notifikasi">
+        </div>
+      </div>
+      <div class="phone">
+        <div class="phone-top"><div class="phone-notch"></div></div>
+        <div class="phone-placeholder">
+          <img src="img/panduan.png" alt="Panduan">
+        </div>
+      </div>
+    </div>
+    <div class="showcase-info">
+      <div class="showcase-num">03</div>
+      <h3>Notifikasi & Panduan</h3>
+      <p>Sistem notifikasi cerdas yang mengelompokkan informasi berdasarkan urgensi. Panduan hadir dengan format visual, ringkas, dan mudah dipahami untuk semua usia.</p>
+      <div class="tag-row"><span class="tag">Notifications</span><span class="tag">Accessibility</span><span class="tag">Onboarding</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<section id="design-system" class="fade">
+  <div class="section-number">06 — Sistem Desain</div>
+  <h2 class="section-title">Color Palette &amp; Typography</h2>
+  <p class="body-text" style="max-width:560px">Sistem desain memastikan konsistensi visual di setiap layar — dari token warna, tipografi, hingga komponen interaktif siap pakai.</p>
+
+  <div class="ds-block">
+    <div class="ds-sub">Warna Utama</div>
+    <div class="palette-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#78C3A0"></div><div class="swatch-info"><div class="swatch-name">Primary</div><div class="swatch-hex">#78C3A0</div><div class="swatch-desc">Tombol utama, ikon aktif, badge, dan elemen penting.</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#4F8F78"></div><div class="swatch-info"><div class="swatch-name">Primary Dark</div><div class="swatch-hex">#4F8F78</div><div class="swatch-desc">Hover, pressed state, dan aksen yang lebih gelap.</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#D7E6E0;border-bottom:1px solid #eee"></div><div class="swatch-info"><div class="swatch-name">Background Header</div><div class="swatch-hex">#D7E6E0</div><div class="swatch-desc">Background header atau section highlight.</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#EAF2F5;border-bottom:1px solid #eee"></div><div class="swatch-info"><div class="swatch-name">Page Background</div><div class="swatch-hex">#EAF2F5</div><div class="swatch-desc">Background utama aplikasi.</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-block">
+    <div class="ds-sub">Warna Netral</div>
+    <div class="palette-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;border-bottom:1px solid #eee"></div><div class="swatch-info"><div class="swatch-name">Card / Surface</div><div class="swatch-hex">#FFFFFF</div><div class="swatch-desc">Card, modal, sheet, permukaan konten.</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#000000"></div><div class="swatch-info"><div class="swatch-name">Text Primary</div><div class="swatch-hex">#000000</div><div class="swatch-desc">Judul, heading utama, teks penting.</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#4B4BAB"></div><div class="swatch-info"><div class="swatch-name">Text Secondary</div><div class="swatch-hex">#4B4BAB</div><div class="swatch-desc">Teks isi, label, dan informasi sekunder.</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#D9D9D9"></div><div class="swatch-info"><div class="swatch-name">Border / Input</div><div class="swatch-hex">#D9D9D9</div><div class="swatch-desc">Border, input field, divider, outline.</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#EEEEEE"></div><div class="swatch-info"><div class="swatch-name">Divider / Line</div><div class="swatch-hex">#EEEEEE</div><div class="swatch-desc">Divider tipis antar elemen.</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-block">
+    <div class="ds-sub">Warna Status</div>
+    <div class="status-row">
+      <div class="status-chip"><div class="status-chip-color" style="background:#22C55E"></div><div class="status-chip-info"><div class="status-chip-name">Success</div><div class="status-chip-hex">#22C55E</div><div class="status-chip-desc">Status Sukses</div></div></div>
+      <div class="status-chip"><div class="status-chip-color" style="background:#3B82F6"></div><div class="status-chip-info"><div class="status-chip-name">Info</div><div class="status-chip-hex">#3B82F6</div><div class="status-chip-desc">Informasi Umum</div></div></div>
+      <div class="status-chip"><div class="status-chip-color" style="background:#F59E0B"></div><div class="status-chip-info"><div class="status-chip-name">Warning</div><div class="status-chip-hex">#F59E0B</div><div class="status-chip-desc">Peringatan</div></div></div>
+      <div class="status-chip"><div class="status-chip-color" style="background:#EF4444"></div><div class="status-chip-info"><div class="status-chip-name">Error</div><div class="status-chip-hex">#EF4444</div><div class="status-chip-desc">Gagal / Bahaya</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<section id="testing" class="fade">
+  <div class="section-number">07 — Validasi</div>
+  <h2 class="section-title">Usability Testing</h2>
+  <div class="test-grid">
+    <div class="test-card">
+      <h4>Metode</h4>
+      <p>Menggunakan metode kualitatif Usability Testing secara langsung (In-person) kepada 5 partisipan perwakilan pengguna akhir untuk memvalidasi kemudahan alur antarmuka baru.</p>
+    </div>
+    <div class="test-card">
+      <h4>Hasil Akhir</h4>
+      <p>Skor kepuasan sistem menunjukkan tingkat keberhasilan tugas sebesar 94%. Alur antrian real-time memangkas kebingungan navigasi pasien baru secara drastis.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section fade">
+  <h2>Tertarik dengan Proyek Ini?</h2>
+  <p>Mari berdiskusi lebih lanjut mengenai perancangan produk digital interaktif atau kolaborasi desain masa depan.</p>
+  <button class="cta-btn">Lihat Portofolio</button>
+</section>
+
+<footer>
+  <div>&copy; 2026 VitaCare Portfolio. All Rights Reserved.</div>
+  <div>Designed by UX Team</div>
+</footer>
+
+<script>
+// Animasi Fade In saat Scroll Interaktif
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade').forEach((el) => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
