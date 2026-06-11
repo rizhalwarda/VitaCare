@@ -15,7 +15,10 @@
   --muted:#5A7A70; --accent:#78C3A0; --accent2:#4F8F78;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top: 90px; /* Menyesuaikan tinggi navbar agar konten tidak terhalang */
+}
 body{background:var(--bg-page);color:var(--text-main);font-family:'Poppins',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
 
 /* NAV */
@@ -27,7 +30,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 5%;display:flex
 .nav-links a:hover{color:var(--primary-dark)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 5% 80px;position:relative;overflow:hidden;background:radial-gradient(ellipse at top right,rgba(120,195,160,.18) 0%,transparent 55%),radial-gradient(ellipse at bottom left,rgba(79,143,120,.10) 0%,transparent 55%),var(--bg-page)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 5%;position:relative;overflow:hidden;background:radial-gradient(ellipse at top right,rgba(120,195,160,.18) 0%,transparent 55%),radial-gradient(ellipse at bottom left,rgba(79,143,120,.10) 0%,transparent 55%),var(--bg-page)}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(120,195,160,.15);border:1px solid rgba(120,195,160,.4);color:var(--primary-dark);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;width:fit-content}
 .hero-tag::before{content:'';width:7px;height:7px;background:var(--primary);border-radius:50%;animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
@@ -39,18 +42,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 5%;display:flex
 .meta-item span{font-size:14px;color:var(--text-main);font-weight:600}
 
 /* PHONES MOCKUP CONFIG */
-.hero-mockups{position:absolute;right:5%;bottom:60px;display:flex;gap:16px;align-items:flex-end}
+.hero-mockups{position:absolute;right:5%;bottom:10%;display:flex;gap:16px;align-items:flex-end}
 .phone{width:140px;background:var(--card);border-radius:28px;border:2px solid var(--divider-col);overflow:hidden;box-shadow:0 20px 50px rgba(79,143,120,.15),0 4px 12px rgba(0,0,0,.06);animation:floatPhone 5s ease-in-out infinite;display:flex;flex-direction:column}
 .phone:nth-child(2){animation-delay:.8s;--base-y:30px;transform:translateY(30px)}
 .phone:nth-child(3){animation-delay:1.6s;--base-y:15px;transform:translateY(15px);width:120px}
 @keyframes floatPhone{0%,100%{transform:translateY(var(--base-y,0))}50%{transform:translateY(calc(var(--base-y,0) - 16px))}}
 .phone-top{background:var(--bg-header);height:12px;display:flex;justify-content:center;align-items:center;flex-shrink:0}
 .phone-notch{width:40px;height:5px;background:rgba(79,143,120,.3);border-radius:10px}
-
-/* Smooth Scroll */
-html{
-    scroll-behavior:smooth;
-}
 
 /* ========================= */
 /* NAVIGATION */
@@ -996,10 +994,6 @@ footer{padding:36px 5%;border-top:1.5px solid var(--divider-col);display:flex;ju
     }
 
 }
-html {
-    scroll-behavior: smooth;
-}
-
 .design-process {
     display: flex;
     align-items: center;
@@ -1044,8 +1038,7 @@ html {
 }
 
 section {
-    min-height: 100vh;
-    padding: 100px 80px;
+    padding: 60px 5%;
 }
 
 @media(max-width:900px){
@@ -1078,6 +1071,7 @@ section {
   <ul class="nav-links">
     <li><a href="#overview">Ringkasan</a></li>
     <li><a href="#problem">Masalah</a></li>
+    <li><a href="#process">Proses</a></li>
     <li><a href="#features">Fitur</a></li>
     <li><a href="#showcase">Tampilan</a></li>
     <li><a href="#design-system">Desain</a></li>
@@ -1178,14 +1172,12 @@ section {
 
 <div class="hr"></div>
 
-<section class="fade">
+<section id="process" class="fade">
   <div class="section-number">03 — Proses Desain</div>
   <h2 class="section-title">Design Thinking</h2>
   <p class="body-text" style="max-width:600px">Pendekatan Design Thinking digunakan untuk memahami kebutuhan pengguna secara mendalam — dimulai dari empati, merumuskan masalah inti, hingga solusi yang relevan dan tervalidasi.</p>
-  <div class="design-tabs">
-</section>
 
-    <div class="define-header">
+    <div class="define-header" style="margin-top: 60px;">
         <div class="ideate-badge">
             01 · EMPHATIZE
         </div>
@@ -1193,6 +1185,7 @@ section {
   <div class="figma-link-wrap">
     <a href="https://www.figma.com/design/MgUiBnR6cLHgkDUA2KZAvA/Untitled?node-id=174-2&t=wMWmN4TS8DrX0fSu-1"
        target="_blank"
+       rel="noopener noreferrer"
        class="figma-link">
 
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
@@ -1341,7 +1334,6 @@ section {
 
 </div>
 </section>
-</section>
 <section class="ideate-section fade">
 
     <div class="ideate-header">
@@ -1361,103 +1353,53 @@ section {
 
     <div class="idea-grid">
 
+        <!-- Item 1 -->
         <div class="idea-card">
-
-            <div class="idea-icon">📅</div>
-
-            <div class="idea-title">
-                Smart Appointment
-            </div>
-
-            <div class="idea-card">
-    <div class="idea-icon">🩺</div>
-    <h4>Virtual Health Assistant</h4>
-    <p>
-        Asisten kesehatan digital yang membantu pengguna menemukan layanan,
-        menjawab pertanyaan umum, dan memberikan rekomendasi tindakan awal.
-    </p>
-    <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
-</div>
-
+            <div class="idea-icon">🩺</div>
+            <div class="idea-title">Virtual Health Assistant</div>
+            <p class="idea-desc">Asisten kesehatan digital yang membantu pengguna menemukan layanan dan rekomendasi tindakan awal.</p>
+            <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
         </div>
 
+        <!-- Item 2 (Top Idea) -->
         <div class="idea-card top">
-
-            <div class="top-badge">
-                🔥 Top Idea
-            </div>
-
-            <div class="idea-card top-idea">
-    <div class="idea-badge">🏆 Solusi Utama</div>
-    <div class="idea-icon">📍</div>
-
-    <h4>Smart Queue Monitoring</h4>
-
-    <p>
-        Pengguna dapat melihat posisi antrian klinik secara real-time,
-        estimasi waktu tunggu, serta mendapatkan notifikasi ketika giliran
-        pemeriksaan semakin dekat.
-    </p>
-
-    <div class="idea-priority">⭐⭐⭐⭐⭐ Dipilih Sebagai Solusi Inti</div>
-</div>
-
+            <div class="top-badge">🔥 Top Idea</div>
+            <div class="idea-icon">📍</div>
+            <div class="idea-title">Smart Queue Monitoring</div>
+            <p class="idea-desc">Pengguna dapat melihat posisi antrian klinik secara real-time dan estimasi waktu tunggu.</p>
+            <div class="idea-priority">⭐⭐⭐⭐⭐ Solusi Inti</div>
         </div>
 
+        <!-- Item 3 -->
         <div class="idea-card">
-
-            <div class="idea-card">
-    <div class="idea-icon">💊</div>
-    <h4>Medication Reminder</h4>
-    <p>
-        Sistem pengingat konsumsi obat yang menyesuaikan jadwal terapi
-        sehingga pasien tidak lupa menjalankan pengobatan.
-    </p>
-    <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
-</div>
-
+            <div class="idea-icon">💊</div>
+            <div class="idea-title">Medication Reminder</div>
+            <p class="idea-desc">Sistem pengingat konsumsi obat yang menyesuaikan jadwal terapi pasien.</p>
+            <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
         </div>
 
+        <!-- Item 4 -->
         <div class="idea-card">
-
-           <div class="idea-card">
-    <div class="idea-icon">📂</div>
-    <h4>Personal Health Vault</h4>
-    <p>
-        Semua hasil pemeriksaan, resep, dan riwayat konsultasi tersimpan
-        dalam satu tempat yang aman dan mudah diakses.
-    </p>
-    <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
-</div>
-
+            <div class="idea-icon">📂</div>
+            <div class="idea-title">Personal Health Vault</div>
+            <p class="idea-desc">Hasil pemeriksaan dan riwayat konsultasi tersimpan dalam satu tempat yang aman.</p>
+            <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
         </div>
 
+        <!-- Item 5 -->
         <div class="idea-card">
-
-           <div class="idea-card">
-    <div class="idea-icon">🎥</div>
-    <h4>Telemedicine Connect</h4>
-    <p>
-        Konsultasi kesehatan jarak jauh melalui video call maupun chat
-        tanpa harus datang langsung ke fasilitas kesehatan.
-    </p>
-    <div class="idea-priority">⭐⭐⭐ Prioritas Menengah</div>
-</div>
-
+            <div class="idea-icon">🎥</div>
+            <div class="idea-title">Telemedicine Connect</div>
+            <p class="idea-desc">Konsultasi kesehatan jarak jauh melalui video call maupun chat secara langsung.</p>
+            <div class="idea-priority">⭐⭐⭐ Prioritas Menengah</div>
         </div>
 
+        <!-- Item 6 -->
         <div class="idea-card">
-
-            <div class="idea-card">
-    <div class="idea-icon">🚨</div>
-    <h4>Emergency Quick Access</h4>
-    <p>
-        Tombol darurat yang menghubungkan pengguna ke layanan kesehatan
-        terdekat lengkap dengan informasi lokasi secara cepat.
-    </p>
-    <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
-</div>
-
+            <div class="idea-icon">🚨</div>
+            <div class="idea-title">Emergency Quick Access</div>
+            <p class="idea-desc">Tombol darurat yang menghubungkan pengguna ke layanan kesehatan terdekat dengan cepat.</p>
+            <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
         </div>
 
     </div>
@@ -1555,9 +1497,9 @@ Lihat Detail di Figma → Ideate
 
 </div>
 
-
 </section>
-<div class="ideate-header">
+<section class="fade">
+    <div class="ideate-header">
 
         <div class="ideate-badge">
             05 · TEST
@@ -1570,7 +1512,6 @@ Lihat Detail di Figma → Ideate
         </p>
 
     </div>
-</section>
 
 <div class="hr"></div>
 
@@ -1589,12 +1530,10 @@ Lihat Detail di Figma → Ideate
 
 <div class="hr"></div>
 
-<section id="showcase" class="fade">
+<section id="showcase" class="fade" style="padding-bottom: 0;">
   <div class="section-number">05 — Tampilan UI Akhir</div>
   <h2 class="section-title">Antarmuka yang hidup</h2>
-</section>
-
-<section class="fade" style="padding-top:0">
+  
   <div class="showcase-area">
     <div class="showcase-phones">
       <div class="phone">
@@ -1617,10 +1556,8 @@ Lihat Detail di Figma → Ideate
       <div class="tag-row"><span class="tag">Branding</span><span class="tag">Navigation</span><span class="tag">First Impression</span></div>
     </div>
   </div>
-</section>
 
-<section class="fade" style="padding-top:50px">
-  <div class="showcase-area reverse">
+  <div class="showcase-area reverse" style="margin-top: 80px;">
     <div class="showcase-phones">
       <div class="phone">
         <div class="phone-top"><div class="phone-notch"></div></div>
@@ -1642,10 +1579,8 @@ Lihat Detail di Figma → Ideate
       <div class="tag-row"><span class="tag">Scheduling</span><span class="tag">Real-time</span><span class="tag">Efficiency</span></div>
     </div>
   </div>
-</section>
 
-<section class="fade" style="padding-top:50px">
-  <div class="showcase-area">
+  <div class="showcase-area" style="margin-top: 80px;">
     <div class="showcase-phones">
       <div class="phone">
         <div class="phone-top"><div class="phone-notch"></div></div>
