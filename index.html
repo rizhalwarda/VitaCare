@@ -1040,28 +1040,224 @@ footer{padding:36px 5%;border-top:1.5px solid var(--divider-col);display:flex;ju
 section {
     padding: 60px 5%;
 }
+/* ========================= */
+/* ABOUT DESIGNER */
+/* ========================= */
+
+.about-designer{
+    background:#f4f2ee;
+    padding:120px 5%;
+}
+
+.about-container{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.about-photo{
+    width:300px;
+    height:300px;
+    border:6px solid #1f5a45;
+    border-radius:50%;
+    overflow:hidden;
+}
+
+.about-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#d97706;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+}
+
+.about-label span{
+    width:30px;
+    height:2px;
+    background:#d97706;
+}
+
+.about-content h2{
+    font-size:64px;
+    line-height:1.05;
+    font-weight:800;
+    color:#1f5a45;
+    margin-bottom:15px;
+}
+
+.about-nim{
+    color:#94a3b8;
+    font-size:28px;
+    margin-bottom:35px;
+}
+
+.about-content p{
+    font-size:22px;
+    line-height:1.9;
+    color:#5f6b76;
+    max-width:800px;
+    margin-bottom:40px;
+}
+
+.about-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.about-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:18px 35px;
+
+    border-radius:999px;
+    text-decoration:none;
+
+    font-size:20px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.about-btn:hover{
+    transform:translateY(-4px);
+}
+
+.about-btn.primary{
+    background:#1f5a45;
+    color:white;
+}
+
+.about-btn.secondary{
+    border:2px solid #cbd5d1;
+    color:#1f5a45;
+    background:transparent;
+}
+
+/* Mobile */
+@media(max-width:900px){
+    .persona-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media (max-width: 900px) {
+
+  /* Hero Mobile Adjustment */
+  .hero {
+    min-height: auto;
+    padding: 120px 5% 60px;
+    text-align: center;
+    justify-content: flex-start;
+  }
+
+}
+
+    .about-photo{
+        margin:auto;
+        width:240px;
+        height:240px;
+    }
+
+    .about-label{
+        justify-content:center;
+    }
+
+    .about-content h2{
+        font-size:42px;
+    }
+
+    .about-content p{
+        font-size:18px;
+    }
+
+    .about-buttons{
+        justify-content:center;
+    }
 
 @media(max-width:900px){
     .persona-grid{
         grid-template-columns:1fr;
     }
+@media (max-width: 900px) {
+  /* Hero Mobile Adjustment */
+  .hero {
+    min-height: auto;
+    padding: 120px 5% 60px;
+    text-align: center;
+    justify-content: flex-start;
+  }
+  .hero-tag { margin: 0 auto 28px; }
+  .hero h1 { font-size: 48px; letter-spacing: -1px; }
+  .hero-meta { justify-content: center; gap: 20px; }
+  
+  .hero-mockups {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 40px;
+    justify-content: center;
+    width: 100%;
+    transform: scale(0.85);
+  }
+  .hero-mockups .phone:last-child { display: none; } /* Sembunyikan satu agar tidak penuh */
 
     .define-header h2{
         font-size:40px;
     }
 }
+}
 @media(max-width:900px){
   .hero-mockups{display:none}
   .two-col,.test-grid{grid-template-columns:1fr;gap:24px}
+  /* Layout Adjustments */
+  .two-col, .test-grid, .persona-grid, .idea-grid, .process-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .define-header h2 { font-size: 36px; }
   .stats-row{grid-template-columns:1fr}
   .process-steps{grid-template-columns:repeat(3,1fr)}
   .status-row{grid-template-columns:repeat(3,1fr)}
   .showcase-area,.showcase-area.reverse{grid-template-columns:1fr;direction:ltr}
+  .status-row{grid-template-columns:repeat(2,1fr)}
+
+  /* Showcase Mobile Adjustment */
+  .showcase-area, .showcase-area.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 40px;
+    text-align: center;
+  }
+  .showcase-phones { transform: scale(0.9); }
+  .showcase-info { align-items: center; }
+  .tag-row { justify-content: center; }
+  .showcase-num { font-size: 60px; margin-bottom: 10px; }
+
   nav .nav-links{display:none}
   .cta-section{padding:48px 24px}
   .cta-section h2{font-size:30px}
   footer{flex-direction:column;gap:8px;text-align:center}
 }
+
 </style>
 </head>
 <body>
@@ -1181,7 +1377,6 @@ section {
         <div class="ideate-badge">
             01 · EMPHATIZE
         </div>
-</div>
   <div class="figma-link-wrap">
     <a href="https://www.figma.com/design/MgUiBnR6cLHgkDUA2KZAvA/Untitled?node-id=174-2&t=wMWmN4TS8DrX0fSu-1"
        target="_blank"
@@ -1194,7 +1389,6 @@ section {
         <span>Lihat Detail di Figma → Emphatize</span>
     </a>
 </div>
-<section class="define-section fade">
 
     <div class="define-header">
         <div class="ideate-badge">
@@ -1418,9 +1612,7 @@ Lihat Detail di Figma → Ideate
 </a>
 
 </div>
-</section>
-
-    <div class="ideate-header">
+    <div class="ideate-header" style="margin-top: 100px;">
 
         <div class="ideate-badge">
             04 · PROTOTYPE
@@ -1666,9 +1858,59 @@ Lihat Detail di Figma → Ideate
   <button class="cta-btn">Hubungi Via Email</button>
 </section>
 
+<!-- ABOUT DESIGNER -->
+<section class="about-designer fade">
+    <div class="about-container">
+
+        <div class="about-photo">
+            <img src="img/ranita.jpeg" alt="Ranita Rizqi Wardatussholikhah">
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-label">
+                <span></span>
+                TENTANG PERANCANG
+            </div>
+
+            <h2>
+                Ranita Rizqi<br>
+                Wardatussholikhah
+            </h2>
+
+            <div class="about-nim">
+                NIM : 253307060
+            </div>
+
+            <p>
+                Mahasiswa yang berfokus pada bidang UX/UI Design dan pengembangan produk digital, 
+                dengan minat dalam menciptakan solusi yang berorientasi pada kebutuhan pengguna. 
+                Melalui proyek VitaCare, saya menerapkan pendekatan Design Thinking untuk merancang pengalaman digital yang efektif, 
+                mudah digunakan, dan memberikan nilai nyata bagi penggunanya.
+
+            </p>
+
+            <div class="about-buttons">
+
+                <a href="https://github.com/" target="_blank" class="about-btn primary">
+                    <span>🐱</span>
+                    GitHub
+                </a>
+
+                <a href="mailto:rizhalwarda@gmail.com" class="about-btn secondary">
+                    <span>✉</span>
+                    Email Saya
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
 <footer>
-  <div>&copy; 2026 VitaCare Portofolio. rizhalwarda@gmail.com.</div>
-  <div>Designed by rizqiwarda</div>
+  <div>&copy; 2026 VitaCare Portofolio.</div>
+  <div>Designed by Ranita Rizqi Wardatussholikhah NIM: 253307060</div>
 </footer>
 
 <script>
