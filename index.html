@@ -47,6 +47,191 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 5%;display:flex
 .phone-top{background:var(--bg-header);height:12px;display:flex;justify-content:center;align-items:center;flex-shrink:0}
 .phone-notch{width:40px;height:5px;background:rgba(79,143,120,.3);border-radius:10px}
 
+/* Smooth Scroll */
+html{
+    scroll-behavior:smooth;
+}
+
+/* ========================= */
+/* NAVIGATION */
+/* ========================= */
+
+.design-nav-section{
+    padding:40px 30px;
+    background:#eef5f7;
+}
+
+.nav-wrapper{
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.design-thinking-nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.nav-item{
+    text-decoration:none;
+    color:#64748b;
+
+    font-size:18px;
+    font-weight:700;
+
+    padding:18px 32px;
+    border-radius:999px;
+
+    transition:0.3s;
+}
+
+.nav-item span{
+    margin-right:10px;
+    font-size:15px;
+    color:#94a3b8;
+}
+
+.nav-item:hover{
+    background:#dff8ee;
+    color:#ff6b00;
+}
+
+.nav-item.active{
+    background:#dff8ee;
+    border:2px solid #34d399;
+    color:#ff6b00;
+}
+
+/* ========================= */
+/* FIGMA BUTTON */
+/* ========================= */
+
+.figma-btn{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    min-width:420px;
+
+    padding:22px 35px;
+
+    background:#ffffff;
+
+    border:2px solid #dbe5f2;
+    border-radius:999px;
+
+    text-decoration:none;
+    color:#0f172a;
+
+    font-size:18px;
+    font-weight:700;
+
+    transition:0.3s;
+}
+
+.figma-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.figma-btn img{
+    width:32px;
+    height:32px;
+}
+
+/* ========================= */
+/* CONTENT SECTION */
+/* ========================= */
+
+.design-section{
+    max-width:1200px;
+    margin:100px auto;
+
+    padding:60px;
+
+    background:white;
+
+    border-radius:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.section-badge{
+    display:inline-block;
+
+    padding:10px 20px;
+
+    background:#ffe8a3;
+
+    border-radius:999px;
+
+    font-size:13px;
+    font-weight:700;
+
+    color:#9a6700;
+
+    margin-bottom:25px;
+}
+
+.design-section h2{
+    font-size:42px;
+    margin-bottom:20px;
+    color:#1e293b;
+}
+
+.design-section p{
+    font-size:18px;
+    line-height:1.8;
+    color:#64748b;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:1100px){
+
+    .nav-wrapper{
+        flex-direction:column;
+    }
+
+    .design-thinking-nav{
+        justify-content:center;
+    }
+
+    .figma-btn{
+        min-width:auto;
+        width:100%;
+        justify-content:center;
+    }
+}
+
+@media(max-width:768px){
+
+    .design-thinking-nav{
+        gap:12px;
+    }
+
+    .nav-item{
+        width:100%;
+        text-align:center;
+    }
+
+    .design-section{
+        padding:35px 25px;
+        margin:60px 20px;
+    }
+
+    .design-section h2{
+        font-size:30px;
+    }
+}
 /* KODE UTAMA UNTUK MEMASUKKAN FOTO KE DALAM HP */
 .phone-placeholder {
     width: 100%;
@@ -99,6 +284,94 @@ h2.section-title{font-size:clamp(26px,3.5vw,46px);font-weight:700;color:var(--te
 .step:hover .step-num,.step:hover .step-label{color:#fff}
 .step-num{font-size:38px;font-weight:800;color:var(--divider-col);display:block;margin-bottom:6px;transition:color .3s;letter-spacing:-2px}
 .step-label{font-size:12px;font-weight:700;color:var(--text-main);transition:color .3s}
+
+.figma-link-wrap{
+    text-align:center;
+    margin-top:80px;
+    margin-bottom:100px; 
+}
+
+.fig1 {
+    padding-left: 20px;
+}
+
+.figma-link{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:22px 40px;
+
+    background:white;
+
+    border:3px solid #d8e2f0;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    color:#0f172a;
+
+    font-size:20px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.figma-link img{
+    width:28px;
+    height:28px;
+}
+
+.figma-link:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.design-tabs{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+
+    margin-top:50px;
+    margin-bottom:50px;
+
+    flex-wrap:wrap;
+}
+
+.design-tab{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#64748b;
+
+    font-size:20px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.design-tab span{
+    font-size:16px;
+    color:#94a3b8;
+}
+
+.design-tab.active{
+    background:#e8edf5;
+
+    padding:18px 32px;
+
+    border-radius:999px;
+
+    color:#f97316;
+}
+
+.design-tab.active span{
+    color:#94a3b8;
+}
 
 /* FEATURES */
 .feature-list{display:flex;flex-direction:column;gap:2px;background:var(--divider-col);margin-top:36px;border-radius:20px;overflow:hidden}
@@ -175,6 +448,615 @@ footer{padding:36px 5%;border-top:1.5px solid var(--divider-col);display:flex;ju
 .fade{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .fade.visible{opacity:1;transform:translateY(0)}
 
+/* DEFINE SECTION */
+.define-section{
+    background:linear-gradient(90deg,#dff5f4 0%,#f8f5ef 100%);
+}
+
+.define-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.define-header h2{
+    font-size:56px;
+    font-weight:800;
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.define-header p{
+    max-width:700px;
+    margin:auto;
+    color:#64748b;
+    font-size:18px;
+}
+
+.persona-title{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.persona-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.persona-card{
+    background:#fff;
+    border:2px solid #dbe4f2;
+    border-radius:30px;
+    padding:40px;
+    transition:.3s;
+}
+
+.persona-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.persona-top{
+    display:flex;
+    gap:25px;
+    margin-bottom:25px;
+}
+
+.persona-avatar{
+    width:95px;
+    height:95px;
+    border-radius:24px;
+    overflow:hidden;
+    background:#f1f5f9;
+    flex-shrink:0;
+}
+
+.persona-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.persona-name{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.persona-job{
+    color:#64748b;
+    margin-bottom:15px;
+}
+
+.persona-tags{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.persona-tags span{
+    background:#edf2fb;
+    color:#475569;
+    padding:8px 15px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.persona-info p{
+    margin-bottom:12px;
+    color:#334155;
+}
+
+.persona-info strong{
+    color:#0f172a;
+}
+.persona-card{
+    background:#ffffff;
+    border:2px solid #dbe4f2;
+    border-radius:30px;
+    padding:40px;
+    transition:.3s;
+}
+
+.persona-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.persona-top{
+    display:flex;
+    align-items:flex-start;
+    gap:25px;
+    margin-bottom:25px;
+}
+.hmw-section{
+    margin-top:60px;
+}
+
+.hmw-title{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:25px;
+    color:#0f172a;
+}
+
+.hmw-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.hmw-card{
+    background:#fff;
+    border:2px solid #dbe4f2;
+    border-radius:20px;
+    padding:24px 28px;
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    transition:.3s;
+}
+
+.hmw-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.hmw-icon{
+    font-size:28px;
+}
+
+.hmw-card p{
+    color:#475569;
+    line-height:1.8;
+}
+
+.hmw-card strong{
+    color:#0f172a;
+}
+.ideate-section{
+    padding:100px 5%;
+    background:linear-gradient(
+    90deg,
+    #f9fafb 0%,
+    #fffceb 50%,
+    #ffffff 100%);
+}
+
+.ideate-header{
+    text-align:center;
+    padding-top: 20px;
+    margin-bottom:60px;
+}
+
+.ideate-badge{
+    display:inline-block;
+    padding:8px 18px;
+    background:#fff3c4;
+    border-radius:999px;
+    color:#b7791f;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.ideate-header h2{
+    font-size:56px;
+    font-weight:800;
+    color:#0f172a;
+    margin-bottom:12px;
+}
+
+.ideate-header p{
+    max-width:650px;
+    margin:auto;
+    color:#64748b;
+}
+
+.idea-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.idea-card{
+    background:white;
+    border:2px solid #dbe4f2;
+    border-radius:24px;
+    padding:30px;
+    transition:.4s;
+    position:relative;
+}
+
+.idea-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.idea-card.top{
+    border:2px solid #facc15;
+    background:#fffef1;
+}
+
+.top-badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#facc15;
+    color:#78350f;
+    font-size:11px;
+    font-weight:700;
+    padding:5px 10px;
+    border-radius:999px;
+}
+
+.idea-icon{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.idea-title{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.idea-desc{
+    color:#64748b;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.idea-priority{
+    color:#ca8a04;
+    font-weight:600;
+}
+.figma-animate{
+    animation:pulseFigma 2.5s infinite;
+}
+
+@keyframes pulseFigma{
+    0%{
+        transform:translateY(0);
+        box-shadow:0 0 0 rgba(120,195,160,0);
+    }
+    50%{
+        transform:translateY(-6px);
+        box-shadow:0 15px 30px rgba(120,195,160,.25);
+    }
+    100%{
+        transform:translateY(0);
+        box-shadow:0 0 0 rgba(120,195,160,0);
+    }
+}
+.process-section{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+}
+
+.process-card{
+    width:100%;
+    min-height:260px;
+
+    background:#fff;
+    border:2px solid #d8e8ff;
+    border-radius:24px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+.figma-card-wrap{
+    margin-top:40px;
+
+    display:flex;
+    justify-content:center;
+}
+
+.figma-card{
+    width:380px;
+    height:180px;
+
+    background:#fff;
+
+    border:2px solid #d8e8ff;
+    border-radius:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+
+    text-decoration:none;
+    color:#0f172a;
+
+    font-size:22px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.figma-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.figma-card img{
+    width:35px;
+    height:35px;
+}
+.process-card:nth-child(1){
+    animation-delay:.2s;
+}
+
+.process-card:nth-child(2){
+    animation-delay:.4s;
+}
+
+.process-card:nth-child(3){
+    animation-delay:.6s;
+}
+
+.process-card:hover{
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.12);
+}
+
+.process-card .icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.process-card h3{
+    color:#0f172a;
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.process-card p{
+    color:#64748b;
+    line-height:1.8;
+}
+
+/* Card aktif */
+
+.process-card.active{
+    border:2px solid #34d399;
+
+    background:
+    linear-gradient(
+        180deg,
+        #f0fdf4,
+        #ffffff
+    );
+
+    box-shadow:
+    0 0 25px rgba(52,211,153,.25);
+}
+
+/* Animasi muncul */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.process-card{
+    position: relative;
+    overflow: hidden;
+
+    width: 300px;
+    padding: 35px;
+
+    background: rgba(255,255,255,.75);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 25px;
+
+    box-shadow: 0 8px 32px rgba(31,38,135,.12);
+
+    transition: all .4s ease;
+
+    cursor: pointer;
+}
+
+/* Efek hover utama */
+.process-card:hover{
+    transform:
+        translateY(-15px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 40px rgba(14,165,233,.2),
+        0 10px 20px rgba(110,231,183,.2);
+}
+
+/* Efek garis cahaya */
+.process-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.6),
+        transparent
+    );
+
+    transition:.8s;
+}
+
+.process-card:hover::before{
+    left:100%;
+}
+
+/* Border Glow */
+.process-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    border-radius:25px;
+    padding:2px;
+
+    background:linear-gradient(
+        135deg,
+        #38BDF8,
+        #6EE7B7
+    );
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+            mask-composite:exclude;
+
+    opacity:0;
+    transition:.4s;
+}
+
+.process-card:hover::after{
+    opacity:1;
+}
+.icon{
+    font-size:40px;
+    margin-bottom:15px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+.active{
+    background:linear-gradient(
+        135deg,
+        #ecfdf5,
+        #f0fdfa
+    );
+
+    border:2px solid #34d399;
+
+    animation:pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(52,211,153,.5);
+    }
+
+    70%{
+        box-shadow:0 0 0 20px rgba(52,211,153,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(52,211,153,0);
+    }
+
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.design-process {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #6b7b96;
+    font-family: sans-serif;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.step span {
+    font-size: 24px;
+    color: #8a98b5;
+}
+
+.step h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.step.active {
+    padding: 22px 40px;
+    border: 3px solid #1dd1a1;
+    border-radius: 999px;
+    color: #ff7a00;
+    background: #f7fbff;
+    box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+
+.step:hover {
+    transform: translateY(-2px);
+    color: #ff7a00;
+}
+
+section {
+    min-height: 100vh;
+    padding: 100px 80px;
+}
+
+@media(max-width:900px){
+    .persona-grid{
+        grid-template-columns:1fr;
+    }
+
+    .define-header h2{
+        font-size:40px;
+    }
+}
 @media(max-width:900px){
   .hero-mockups{display:none}
   .two-col,.test-grid{grid-template-columns:1fr;gap:24px}
@@ -209,7 +1091,7 @@ footer{padding:36px 5%;border-top:1.5px solid var(--divider-col);display:flex;ju
   <p class="hero-sub">Layanan Kesehatan Digital</p>
   <div class="hero-meta">
     <div class="meta-item"><label>Peran</label><span>UX / UI Designer</span></div>
-    <div class="meta-item"><label>Durasi</label><span>2 Minggu</span></div>
+    <div class="meta-item"><label>Durasi</label><span>3 Minggu</span></div>
     <div class="meta-item"><label>Platform</label><span>Android · iOS</span></div>
     <div class="meta-item"><label>Alat</label><span>Figma · FigJam</span></div>
   </div>
@@ -300,13 +1182,394 @@ footer{padding:36px 5%;border-top:1.5px solid var(--divider-col);display:flex;ju
   <div class="section-number">03 — Proses Desain</div>
   <h2 class="section-title">Design Thinking</h2>
   <p class="body-text" style="max-width:600px">Pendekatan Design Thinking digunakan untuk memahami kebutuhan pengguna secara mendalam — dimulai dari empati, merumuskan masalah inti, hingga solusi yang relevan dan tervalidasi.</p>
-  <div class="process-steps">
-    <div class="step"><span class="step-num">01</span><div class="step-label">Empati</div></div>
-    <div class="step"><span class="step-num">02</span><div class="step-label">Definisi</div></div>
-    <div class="step"><span class="step-num">03</span><div class="step-label">Ideasi</div></div>
-    <div class="step"><span class="step-num">04</span><div class="step-label">Prototipe</div></div>
-    <div class="step"><span class="step-num">05</span><div class="step-label">Pengujian</div></div>
-  </div>
+  <div class="design-tabs">
+</section>
+
+    <div class="define-header">
+        <div class="ideate-badge">
+            01 · EMPHATIZE
+        </div>
+</div>
+  <div class="figma-link-wrap">
+    <a href="https://www.figma.com/design/MgUiBnR6cLHgkDUA2KZAvA/Untitled?node-id=174-2&t=wMWmN4TS8DrX0fSu-1"
+       target="_blank"
+       class="figma-link">
+
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+             alt="Figma">
+
+        <span>Lihat Detail di Figma → Emphatize</span>
+    </a>
+</div>
+<section class="define-section fade">
+
+    <div class="define-header">
+        <div class="ideate-badge">
+            02 · DEFINE
+        </div>
+        <h2>Mendefinisikan Masalah</h2>
+        <p>
+            Mengolah data riset menjadi pernyataan masalah yang jelas
+            dan persona pengguna yang representatif.
+        </p>
+    </div>
+
+    <h3 class="persona-title">User Persona</h3>
+
+    <div class="persona-grid">
+
+        <!-- Persona 1 -->
+        <div class="persona-card">
+
+            <div class="persona-top">
+
+                <div class="persona-avatar">
+    <img src="img/persona1.png" alt="Persona Mahasiswa">
+</div>
+
+                <div>
+                    <div class="persona-name">
+                        Ecleshia Devina Naisya Utomo
+                    </div>
+
+                    <div class="persona-job">
+                        Mahasiswa · 21 Tahun
+                    </div>
+
+                    <div class="persona-tags">
+                        <span>Aktif</span>
+                        <span>Mobile User</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="persona-info">
+                <p>
+                    <strong>Goal:</strong>
+                    Mendapatkan layanan kesehatan dengan cepat tanpa meninggalkan aktivitas kuliah.
+                </p>
+
+                <p>
+                    <strong>Pain:</strong>
+                    Sulit mengetahui jadwal dokter dan harus datang langsung untuk mengambil nomor antrean.
+                </p>
+
+                <p>
+                    <strong>Need:</strong>
+                    Booking online dan cek antrean secara real-time.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Persona 2 -->
+        <div class="persona-card">
+
+            <div class="persona-top">
+
+                <div class="persona-avatar">
+    <img src="img/persona2.png" alt="Persona Mahasiswa">
+</div>
+
+                <div>
+                    <div class="persona-name">
+                        Bapak Heru
+                    </div>
+
+                    <div class="persona-job">
+                        Orang Tua · 60 Tahun
+                    </div>
+
+                    <div class="persona-tags">
+                        <span>Lansia</span>
+                        <span>kontrol Rutin</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="persona-info">
+
+                <p>
+                    <strong>Goal:</strong>
+                    Mendapatkan layanan kesehatan dan kontrol rutin dengan mudah tanpa harus menunggu lama.
+                </p>
+
+                <p>
+                    <strong>Pain:</strong>
+                    Kesulitan antre di klinik dalam waktu lama serta sering lupa jadwal kontrol dan konsumsi obat.
+                </p>
+
+                <p>
+                    <strong>Need:</strong>
+                    Sistem antrian digital, pengingat jadwal kontrol, dan notifikasi konsumsi obat yang mudah dipahami.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="hmw-section">
+
+    <h3 class="hmw-title">
+        How Might We (HMW)
+    </h3>
+
+    <div class="hmw-list">
+
+        <div class="hmw-card">
+            <div class="hmw-icon">🤔</div>
+            <p>
+                Bagaimana kita bisa membantu pengguna
+                melakukan pendaftaran layanan kesehatan dan pengambilan nomor antrian secara cepat
+                tanpa harus datang langsung ke fasilitas kesehatan?
+            </p>
+        </div>
+
+        <div class="hmw-card">
+            <div class="hmw-icon">🤔</div>
+            <p>
+                Bagaimana kita bisa membantu pengguna
+                mengelola jadwal kontrol kesehatan, konsultasi, dan konsumsi obat
+                agar tidak terlewat terutama bagi pasien lansia?
+            </p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+</section>
+<section class="ideate-section fade">
+
+    <div class="ideate-header">
+
+        <div class="ideate-badge">
+            03 · IDEATE
+        </div>
+
+        <h2>Eksplorasi Solusi</h2>
+
+        <p>
+            Menghasilkan ide-ide kreatif melalui sesi brainstorming,
+            Crazy 8s, dan penentuan solusi prioritas.
+        </p>
+
+    </div>
+
+    <div class="idea-grid">
+
+        <div class="idea-card">
+
+            <div class="idea-icon">📅</div>
+
+            <div class="idea-title">
+                Smart Appointment
+            </div>
+
+            <div class="idea-card">
+    <div class="idea-icon">🩺</div>
+    <h4>Virtual Health Assistant</h4>
+    <p>
+        Asisten kesehatan digital yang membantu pengguna menemukan layanan,
+        menjawab pertanyaan umum, dan memberikan rekomendasi tindakan awal.
+    </p>
+    <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
+</div>
+
+        </div>
+
+        <div class="idea-card top">
+
+            <div class="top-badge">
+                🔥 Top Idea
+            </div>
+
+            <div class="idea-card top-idea">
+    <div class="idea-badge">🏆 Solusi Utama</div>
+    <div class="idea-icon">📍</div>
+
+    <h4>Smart Queue Monitoring</h4>
+
+    <p>
+        Pengguna dapat melihat posisi antrian klinik secara real-time,
+        estimasi waktu tunggu, serta mendapatkan notifikasi ketika giliran
+        pemeriksaan semakin dekat.
+    </p>
+
+    <div class="idea-priority">⭐⭐⭐⭐⭐ Dipilih Sebagai Solusi Inti</div>
+</div>
+
+        </div>
+
+        <div class="idea-card">
+
+            <div class="idea-card">
+    <div class="idea-icon">💊</div>
+    <h4>Medication Reminder</h4>
+    <p>
+        Sistem pengingat konsumsi obat yang menyesuaikan jadwal terapi
+        sehingga pasien tidak lupa menjalankan pengobatan.
+    </p>
+    <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
+</div>
+
+        </div>
+
+        <div class="idea-card">
+
+           <div class="idea-card">
+    <div class="idea-icon">📂</div>
+    <h4>Personal Health Vault</h4>
+    <p>
+        Semua hasil pemeriksaan, resep, dan riwayat konsultasi tersimpan
+        dalam satu tempat yang aman dan mudah diakses.
+    </p>
+    <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
+</div>
+
+        </div>
+
+        <div class="idea-card">
+
+           <div class="idea-card">
+    <div class="idea-icon">🎥</div>
+    <h4>Telemedicine Connect</h4>
+    <p>
+        Konsultasi kesehatan jarak jauh melalui video call maupun chat
+        tanpa harus datang langsung ke fasilitas kesehatan.
+    </p>
+    <div class="idea-priority">⭐⭐⭐ Prioritas Menengah</div>
+</div>
+
+        </div>
+
+        <div class="idea-card">
+
+            <div class="idea-card">
+    <div class="idea-icon">🚨</div>
+    <h4>Emergency Quick Access</h4>
+    <p>
+        Tombol darurat yang menghubungkan pengguna ke layanan kesehatan
+        terdekat lengkap dengan informasi lokasi secara cepat.
+    </p>
+    <div class="idea-priority">⭐⭐⭐⭐ Prioritas Tinggi</div>
+</div>
+
+        </div>
+
+    </div>
+    <div class="figma-link-wrap">
+
+<a href="https://www.figma.com/design/ZUtkTPOiEP7RWbzE05x0wF/Untitled?node-id=0-1&t=lCJkVWqAW02Q09H6-1"
+target="_blank"
+class="figma-link">
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
+
+<span>
+Lihat Detail di Figma → Ideate
+</span>
+
+</a>
+
+</div>
+</section>
+
+    <div class="ideate-header">
+
+        <div class="ideate-badge">
+            04 · PROTOTYPE
+        </div>
+
+        <h2>Membangun Solusi</h2>
+
+        <p>
+            Dari wireframe lo-fi hingga prototype hi-fi interaktif yang siap diuji pengguna.
+        </p>
+
+    </div>
+
+    <div class="process-section">
+
+    <div class="process-card">
+        <div class="icon">📝</div>
+        <h3>Research & Wireframe</h3>
+        <p>
+            Analisis kebutuhan pengguna dan
+            pembuatan wireframe awal aplikasi.
+        </p>
+    </div>
+
+    <div class="process-card">
+        <div class="icon">🎨</div>
+        <h3>UI Design System</h3>
+        <p>
+            Mendesain komponen, warna,
+            tipografi dan user flow.
+        </p>
+    </div>
+
+    <div class="process-card">
+        <div class="icon">🩺</div>
+        <h3>Testing & Validation</h3>
+        <p>
+            Pengujian fitur kesehatan,
+            validasi data pengguna,
+            dan evaluasi pengalaman pengguna.
+        </p>
+    </div>
+
+</div>
+
+<div class="figma-card-wrap">
+    <div class="fig1">
+        <a href="https://www.figma.com/design/MgUiBnR6cLHgkDUA2KZAvA/Untitled?node-id=0-1&t=QTU3dHQ50cFHJ6Ic-1"
+        target="_blank"
+        class="figma-card">
+
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
+
+            <span>Buka Prototype di Figma →</span>
+
+        </a>
+    </div>
+
+    <div class="fig1">
+        <a href="https://www.figma.com/proto/MgUiBnR6cLHgkDUA2KZAvA/Untitled?node-id=1-19&p=f&t=stra4OdtxObfwTrS-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A19&show-proto-sidebar=1"
+        target="_blank"
+        class="figma-card">
+
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
+
+            <span>Buka Prototype di Figma →</span>
+
+        </a>
+    </div>
+
+</div>
+
+</a>
+
+</div>
+
+
+</section>
+<div class="ideate-header">
+
+        <div class="ideate-badge">
+            05 · TEST
+        </div>
+
+        <h2>Membangun Solusi</h2>
+
+        <p>
+            Dari wireframe lo-fi hingga prototype hi-fi interaktif yang siap diuji pengguna.
+        </p>
+
+    </div>
 </section>
 
 <div class="hr"></div>
@@ -465,12 +1728,12 @@ footer{padding:36px 5%;border-top:1.5px solid var(--divider-col);display:flex;ju
 <section class="cta-section fade">
   <h2>Tertarik dengan Proyek Ini?</h2>
   <p>Mari berdiskusi lebih lanjut mengenai perancangan produk digital interaktif atau kolaborasi desain masa depan.</p>
-  <button class="cta-btn">Lihat Portofolio</button>
+  <button class="cta-btn">Hubungi Via Email</button>
 </section>
 
 <footer>
-  <div>&copy; 2026 VitaCare Portfolio. All Rights Reserved.</div>
-  <div>Designed by UX Team</div>
+  <div>&copy; 2026 VitaCare Portofolio. rizhalwarda@gmail.com.</div>
+  <div>Designed by rizqiwarda</div>
 </footer>
 
 <script>
