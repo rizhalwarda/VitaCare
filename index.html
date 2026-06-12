@@ -3,9 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VitaCare — Studi Kasus UX</title>
+    <span>VitaCare</span>
+</div>VitaCare — Studi Kasus UX</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+    /* ========================= */
+/* EMPHATIZE */
+/* ========================= */
+
+.empathize-section{
+    margin-top:50px;
+}
+
+.empathize-section h2{
+    text-align:center;
+    font-size:56px;
+    font-weight:800;
+    color:#0f172a;
+    margin-bottom:15px;
+}
+
+.empathize-desc{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 75px;
+    color:#64748b;
+    font-size:18px;
+}
+.empathize-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+
+    margin-top: 30px; /* tambahkan ini */
+}
+.empathize-desc{
+    margin:0 auto 70px;
+}
+
+
+.empathize-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:start;
+}
+
+.research-side h3{
+    margin-bottom:20px;
+    font-size:24px;
+    font-weight:700;
+}
+
+.research-card{
+    background:#f8fafc;
+    border:2px solid #dbe4f2;
+    border-radius:20px;
+    padding:25px;
+
+    display:flex;
+    gap:18px;
+
+    margin-bottom:20px;
+
+    transition:.3s;
+}
+
+.research-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+}
+
+.research-icon{
+    font-size:28px;
+}
+
+.research-card h4{
+    margin-bottom:5px;
+    color:#0f172a;
+}
+
+.research-card p{
+    color:#64748b;
+    font-size:14px;
+}
+
+/* EMPATHY MAP */
+
+.empathy-map{
+    background:#fff;
+    border:2px solid #dbe4f2;
+    border-radius:40px;
+    overflow:hidden;
+}
+
+.map-header{
+    background:linear-gradient(
+        90deg,
+        #0f172a,
+        #1e3a8a
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+    font-weight:700;
+    font-size:20px;
+}
+
+.map-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.map-box{
+    padding:25px;
+    border:1px solid #e2e8f0;
+
+    min-height:180px;
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.map-box h4{
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.map-box span{
+    background:#f1f5f9;
+    padding:12px;
+    border-radius:12px;
+    color:#475569;
+    font-size:14px;
+}
+.logo-card{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    background:#0f172a;
+    color:white;
+
+    padding:12px 16px;
+
+    border-radius:12px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    font-weight:600;
+    font-size:15px;
+}
+
+.logo-card img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+}
+
+.logo-card:hover{
+    transform:translateY(-3px);
+    transition:.3s;
+}
+.logo-card{
+    width:120px;
+    height:55px;
+
+    background:#0b1220;
+
+    border-radius:8px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+
+    color:white;
+    font-weight:700;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .empathize-grid{
+        grid-template-columns:1fr;
+    }
+
+    .map-grid{
+        grid-template-columns:1fr;
+    }
+
+    .empathize-section h2{
+        font-size:38px;
+    }
+
+}
 :root {
   --primary:#78C3A0; --primary-dark:#4F8F78;
   --bg-header:#D7E6E0; --bg-page:#EAF2F5;
@@ -22,7 +221,7 @@ html{
 body{background:var(--bg-page);color:var(--text-main);font-family:'Poppins',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid var(--divider-col);background:rgba(234,242,245,0.92);backdrop-filter:blur(16px)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100; padding:10px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px solid var(--divider-col);background:rgba(234,242,245,0.92);backdrop-filter:blur(16px)}
 .nav-logo{font-size:22px;font-weight:800;color:var(--text-main)}
 .nav-logo span{color:var(--primary)}
 .nav-links{display:flex;gap:32px;list-style:none}
@@ -30,7 +229,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 5%;display:flex
 .nav-links a:hover{color:var(--primary-dark)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 5%;position:relative;overflow:hidden;background:radial-gradient(ellipse at top right,rgba(120,195,160,.18) 0%,transparent 55%),radial-gradient(ellipse at bottom left,rgba(79,143,120,.10) 0%,transparent 55%),var(--bg-page)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-start;padding:120px 5% 60px;position:relative;overflow:hidden;position:relative;overflow:hidden;background:radial-gradient(ellipse at top right,rgba(120,195,160,.18) 0%,transparent 55%),radial-gradient(ellipse at bottom left,rgba(79,143,120,.10) 0%,transparent 55%),var(--bg-page)}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(120,195,160,.15);border:1px solid rgba(120,195,160,.4);color:var(--primary-dark);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;width:fit-content}
 .hero-tag::before{content:'';width:7px;height:7px;background:var(--primary);border-radius:50%;animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
@@ -162,6 +361,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 5%;display:flex
 
 .section-badge{
     display:inline-block;
+    margin-bottom:25px;
 
     padding:10px 20px;
 
@@ -243,7 +443,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 5%;display:flex
 }
 .phone-placeholder img {
     width: 100%;
-    height: 100%;
     object-fit: cover; /* Mengisi penuh layar HP secara presisi */
     display: block;
 }
@@ -587,15 +786,17 @@ footer{padding:36px 5%;border-top:1.5px solid var(--divider-col);display:flex;ju
     gap:18px;
 }
 
-.hmw-card{
-    background:#fff;
-    border:2px solid #dbe4f2;
-    border-radius:20px;
-    padding:24px 28px;
-    display:flex;
-    align-items:flex-start;
-    gap:16px;
-    transition:.3s;
+.member-card{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 24px 28px;
+
+    border: 1.5px solid #d8e2f1;
+    border-radius: 24px;
+
+    background: #fff;
 }
 
 .hmw-card:hover{
@@ -739,9 +940,9 @@ footer{padding:36px 5%;border-top:1.5px solid var(--divider-col);display:flex;ju
     gap:30px;
 }
 
-.process-card{
-    width:100%;
-    min-height:260px;
+.team-card{
+    height: auto;
+    min-height: unset;
 
     background:#fff;
     border:2px solid #d8e8ff;
@@ -1224,6 +1425,187 @@ section {
     }
 }
 }
+/* ==========================
+   TEST SECTION
+========================== */
+
+.testing-section{
+    padding:100px 5%;
+    background:
+    linear-gradient(
+        90deg,
+        #f8fafc,
+        #fffef5,
+        #ffffff
+    );
+}
+
+.test-scenario{
+
+    max-width:850px;
+    margin:40px auto 60px;
+
+    padding:25px 30px;
+
+    background:white;
+
+    border:2px solid #dbe4f2;
+    border-radius:20px;
+
+    text-align:center;
+
+    color:#475569;
+    line-height:1.8;
+}
+
+.test-layout{
+
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:420px 1fr;
+
+    gap:30px;
+}
+
+.participant-card{
+
+    background:white;
+
+    border:2px solid #dbe4f2;
+    border-radius:25px;
+
+    overflow:hidden;
+}
+
+.respondent-card{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.respondent-card img{
+
+    width:100%;
+    height:280px;
+
+    object-fit:cover;
+}
+
+.participant-info{
+
+    padding:25px;
+}
+
+.participant-name{
+
+    font-size:22px;
+    font-weight:700;
+
+    color:#0f172a;
+}
+
+.participant-desc{
+
+    color:#64748b;
+    margin-top:5px;
+}
+
+.method-box,
+.result-box{
+
+    background:white;
+
+    border:2px solid #dbe4f2;
+    border-radius:25px;
+
+    padding:30px;
+}
+
+.result-box{
+    margin-top:20px;
+}
+
+.method-box h3,
+.result-box h3{
+
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+.method-box p{
+
+    margin-bottom:12px;
+    color:#475569;
+}
+
+.result-box table{
+
+    width:100%;
+    border-collapse:collapse;
+}
+
+.result-box th{
+
+    text-align:left;
+
+    padding:15px;
+
+    background:#f8fafc;
+
+    color:#475569;
+}
+
+.result-box td{
+
+    padding:15px;
+
+    border-top:1px solid #e2e8f0;
+}
+
+.result-box tr:hover{
+
+    background:#f8fafc;
+}
+
+@media(max-width:900px){
+
+    .test-layout{
+        grid-template-columns:1fr;
+    }
+
+}
+
+.figma-link-wrap{
+    text-align:center;
+    margin-top:60px;
+}
+
+.figma-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:14px 28px;
+
+    border:2px solid #d6dff0;
+    border-radius:50px;
+
+    background:#fff;
+    color:#0f172a;
+
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+
+    transition:all .3s ease;
+}
+
+.figma-link:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
 @media(max-width:900px){
   .hero-mockups{display:none}
   .two-col,.test-grid{grid-template-columns:1fr;gap:24px}
@@ -1373,10 +1755,92 @@ section {
   <h2 class="section-title">Design Thinking</h2>
   <p class="body-text" style="max-width:600px">Pendekatan Design Thinking digunakan untuk memahami kebutuhan pengguna secara mendalam — dimulai dari empati, merumuskan masalah inti, hingga solusi yang relevan dan tervalidasi.</p>
 
-    <div class="define-header" style="margin-top: 60px;">
+    <div class="define-header" style="margin-top: 70px;">
         <div class="ideate-badge">
             01 · EMPHATIZE
         </div>
+        <div class="empathize-section">
+
+    <h2>Memahami Pengguna</h2>
+
+    <p class="empathize-desc">
+        Riset mendalam melalui wawancara, observasi, dan survei untuk memahami
+        kebutuhan, perilaku, serta tantangan pengguna dalam mengakses layanan kesehatan.
+    </p>
+
+    <div class="empathize-grid">
+
+        <!-- KIRI -->
+        <div class="research-side">
+
+            <h3>Metode Riset</h3>
+
+            <div class="research-card">
+                <div class="research-icon">🎤</div>
+                <div>
+                    <h4>User Interview</h4>
+                    <p>5 responden dari kalangan mahasiswa dan orang tua</p>
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">👀</div>
+                <div>
+                    <h4>Contextual Inquiry</h4>
+                    <p>Observasi proses pendaftaran dan antrean klinik</p>
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">📊</div>
+                <div>
+                    <h4>Competitive Analysis</h4>
+                    <p>Analisis aplikasi kesehatan seperti Halodoc dan Alodokter</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- KANAN -->
+        <div class="empathy-map">
+
+            <div class="map-header">
+                Empathy Map
+            </div>
+
+            <div class="map-grid">
+
+                <div class="map-box">
+                    <h4>💬 Says</h4>
+                    <span>"Saya ingin tahu nomor antrean saya sekarang."</span>
+                    <span>"Harus datang pagi hanya untuk ambil antrean."</span>
+                </div>
+
+                <div class="map-box">
+                    <h4>🤔 Thinks</h4>
+                    <span>"Apakah saya masih harus menunggu lama?"</span>
+                    <span>"Jangan sampai jadwal dokter berubah."</span>
+                </div>
+
+                <div class="map-box">
+                    <h4>🙌 Does</h4>
+                    <span>Sering menelepon klinik untuk memastikan jadwal.</span>
+                    <span>Datang lebih awal agar tidak kehabisan antrean.</span>
+                </div>
+
+                <div class="map-box">
+                    <h4>❤️ Feels</h4>
+                    <span>Cemas saat antrean tidak jelas.</span>
+                    <span>Frustrasi karena proses pendaftaran lama.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
   <div class="figma-link-wrap">
     <a href="https://www.figma.com/design/MgUiBnR6cLHgkDUA2KZAvA/Untitled?node-id=174-2&t=wMWmN4TS8DrX0fSu-1"
        target="_blank"
@@ -1660,13 +2124,13 @@ Lihat Detail di Figma → Ideate
 
 <div class="figma-card-wrap">
     <div class="fig1">
-        <a href="https://www.figma.com/design/MgUiBnR6cLHgkDUA2KZAvA/Untitled?node-id=0-1&t=QTU3dHQ50cFHJ6Ic-1"
+        <a href="https://www.figma.com/design/MgUiBnR6cLHgkDUA2KZAvA/Untitled?node-id=149-2"
         target="_blank"
         class="figma-card">
 
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
 
-            <span>Buka Prototype di Figma →</span>
+            <span>Buka UI KIT di Figma →</span>
 
         </a>
     </div>
@@ -1690,22 +2154,120 @@ Lihat Detail di Figma → Ideate
 </div>
 
 </section>
-<section class="fade">
+<section class="testing-section fade">
+
     <div class="ideate-header">
 
         <div class="ideate-badge">
             05 · TEST
         </div>
 
-        <h2>Membangun Solusi</h2>
+        <h2>Validasi Pengguna</h2>
 
         <p>
-            Dari wireframe lo-fi hingga prototype hi-fi interaktif yang siap diuji pengguna.
+            Pengujian dilakukan untuk memastikan alur aplikasi mudah dipahami,
+            efisien digunakan, dan membantu pengguna mengakses layanan kesehatan.
         </p>
 
     </div>
 
-<div class="hr"></div>
+    <!-- SCENARIO -->
+
+    <div class="test-scenario">
+
+        <strong>Skenario Pengujian :</strong>
+
+        "Anda ingin membuat janji konsultasi dengan dokter umum,
+        melihat nomor antrean, dan mendapatkan pengingat jadwal pemeriksaan."
+
+    </div>
+
+    <div class="test-layout">
+
+        <!-- KIRI -->
+
+        <div class="participant-card">
+
+            <div class="respondent-card">
+
+                <img src="img/test1.jpeg">
+                <img src="img/test2.jpeg">
+
+            </div>
+
+            <div class="participant-info">
+
+                <div class="participant-name">
+                    Ahmad Rifai
+                </div>
+
+                <div class="participant-desc">
+                    Mahasiswa · 20 Tahun
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- KANAN -->
+
+        <div class="test-result">
+
+            <div class="method-box">
+
+                <h3>Metode Pengujian</h3>
+
+                <p><strong>Metode :</strong> Usability Testing</p>
+                <p><strong>Teknik :</strong> Task Based Testing</p>
+                <p><strong>Partisipan :</strong> 1 Orang</p>
+
+            </div>
+
+            <div class="result-box">
+
+                <h3>Hasil Pengujian</h3>
+
+                <table>
+
+                    <tr>
+                        <th>Tugas</th>
+                        <th>Status</th>
+                    </tr>
+
+                    <tr>
+                        <td>Login ke aplikasi</td>
+                        <td>✅ Berhasil</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mencari dokter</td>
+                        <td>✅ Berhasil</td>
+                    </tr>
+
+                    <tr>
+                        <td>Membuat janji konsultasi</td>
+                        <td>✅ Berhasil</td>
+                    </tr>
+
+                    <tr>
+                        <td>Melihat nomor antrean</td>
+                        <td>✅ Berhasil</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mengakses rekam medis</td>
+                        <td>✅ Berhasil</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <section id="features" class="fade">
   <div class="section-number">04 — Fitur Utama</div>
@@ -1870,7 +2432,7 @@ Lihat Detail di Figma → Ideate
 
             <div class="about-label">
                 <span></span>
-                TENTANG PERANCANG
+                PROFILE
             </div>
 
             <h2>
@@ -1880,6 +2442,9 @@ Lihat Detail di Figma → Ideate
 
             <div class="about-nim">
                 NIM : 253307060
+
+
+                TEKNOLOGI INFORMASI
             </div>
 
             <p>
@@ -1892,9 +2457,8 @@ Lihat Detail di Figma → Ideate
 
             <div class="about-buttons">
 
-                <a href="https://github.com/" target="_blank" class="about-btn primary">
-                    <span>🐱</span>
-                    GitHub
+                <a href="Instagram" target="_blank" class="about-btn primary">
+                    Instagram
                 </a>
 
                 <a href="mailto:rizhalwarda@gmail.com" class="about-btn secondary">
@@ -1910,7 +2474,7 @@ Lihat Detail di Figma → Ideate
 </section>
 <footer>
   <div>&copy; 2026 VitaCare Portofolio.</div>
-  <div>Designed by Ranita Rizqi Wardatussholikhah NIM: 253307060</div>
+  <div>Designed by Ranita Rizqi</div>
 </footer>
 
 <script>
